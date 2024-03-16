@@ -10,9 +10,9 @@ function App() {
 
   return (
     <div className="container-fluid">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
         <div className="container">
-          <SvgLogo width="100" height="50"/> {/* Ajusta el tamaño según necesites */}
+          <SvgLogo width="200" height="200"/> {/* Ajusta el tamaño según necesites */}
         </div>
       </nav>
 
