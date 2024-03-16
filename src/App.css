@@ -4,8 +4,8 @@
 /* Eliminando .service-card y sus dependientes ya que no se utilizan en el ejemplo dado */
 
 .container {
-  max-width: 1200px;
-  margin: 3rem auto; /* Centra el contenedor y añade espacio arriba */
+  max-width: 1500px;
+  margin: 0rem auto; /* Centra el contenedor y añade espacio arriba */
 }
 
 /* Ajustando las clases para la fila y columnas para un espaciado coherente */
@@ -29,4 +29,8 @@
 /* Asegurando que .options-bar y sus botones estén estilizados correctamente */
 .options-bar button {
   margin: 10px 5px; /* Ajusta el espaciado alrededor de los botones */
+}
+.custom-navbar {
+  min-height: 100px; /* Ajusta este valor según necesites */
+  padding: 0 10px; /* Ajusta el padding si es necesario */
 }
