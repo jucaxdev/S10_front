@@ -34,3 +34,14 @@
   min-height: 100px; /* Ajusta este valor según necesites */
   padding: 0 10px; /* Ajusta el padding si es necesario */
 }
+.custom-carousel-img {
+  opacity: 0.5; /* Ajusta la opacidad según necesites */
+}
+
+/* Asegúrate de que el contenido sobre el carrusel tenga un contraste adecuado */
+.content-over-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; /* Asegura que el contenido esté sobre el carrusel */
+}
