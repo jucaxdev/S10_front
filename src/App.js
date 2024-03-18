@@ -1,3 +1,5 @@
+// App.js
+
 import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -34,34 +36,30 @@ function App() {
         <nav className="navbar navbar-expand-lg navbar-dark custom-navbar">
           <div className="container-fluid">
             <SvgLogo
-              width="200"
-              height="200"
+              width="150"
+              height="150"
               style={{ margin: 'auto', display: 'block', filter: 'drop-shadow(0 0 10px rgba(0, 255, 0, 0.5))' }}
             />
           </div>
         </nav>
         <div className="row justify-content-center mt-5">
-          <div className="col-md-8">
-            <div className="row">
-              <div className="col-md-12 text-center">
-                <h3>Car Detailing Center</h3>
-                <p>¡Déjanos cuidar de tu automóvil y devolverle su brillo original!</p>
-                <div className="service-images">
-                  <Slider {...settings}>
-                    {services.map((service, index) => (
-                      <div key={index} className="service-frame" onClick={() => handleServiceClick(service)}>
-                        <img src={service.image} alt={service.title} className="service-image" />
-                        <div className="service-description">
-                          <h5>{service.title}</h5>
-                          <p>{service.description}</p>
-                          <p>Precio: {service.price}</p>
-                          <p>Duración: {service.duration}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </Slider>
-                </div>
-              </div>
+          <div className="col-md-12 text-center">
+            <h3>Car Detailing Center</h3>
+            <p>¡Déjanos cuidar de tu automóvil y devolverle su brillo original!</p>
+            <div className="service-images">
+              <Slider {...settings}>
+                {services.map((service, index) => (
+                  <div key={index} className="service-frame" onClick={() => handleServiceClick(service)}>
+                    <img src={service.image} alt={service.title} className="service-image" />
+                    <button className="btn btn-primary-custom service-title">{service.title}</button>
+                    <div className="service-description">
+                      <p>{service.description}</p>
+                      <p>Precio: {service.price}</p>
+                      <p>Duración: {service.duration}</p>
+                    </div>
+                  </div>
+                ))}
+              </Slider>
             </div>
           </div>
         </div>
