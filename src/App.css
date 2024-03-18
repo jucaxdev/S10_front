@@ -1,14 +1,17 @@
-@import 'suitcss-base';
+/* Importa la fuente de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
-/* Eliminando .title ya que no se utiliza */
-/* Eliminando .service-card y sus dependientes ya que no se utilizan en el ejemplo dado */
+/* Estilos generales */
+body {
+  font-family: 'Lato', sans-serif;
+  color: white; /* Color de texto blanco */
+}
 
 .container {
   max-width: 1500px;
-  margin: 0rem auto; /* Centra el contenedor y añade espacio arriba */
+  margin: 0 auto;
 }
 
-/* Ajustando las clases para la fila y columnas para un espaciado coherente */
 .row {
   margin-right: -15px;
   margin-left: -15px;
@@ -19,29 +22,94 @@
   padding-left: 15px;
 }
 
-/* Optimizando .service-frame para que se use efectivamente */
+/* Estilos para el marco de los servicios */
 .service-frame {
   border: 1px solid #ccc;
   padding: 20px;
-  margin-bottom: 20px; /* Asegura espacio debajo del marco */
+  margin-bottom: 20px;
+  cursor: pointer; /* Cambia el cursor al hacer hover sobre los servicios */
+  position: relative; /* Añadido para el posicionamiento de la descripción */
+  overflow: hidden; /* Añadido para que la descripción no sobresalga del marco */
 }
 
-/* Asegurando que .options-bar y sus botones estén estilizados correctamente */
+/* Estilos para la barra de opciones */
 .options-bar button {
-  margin: 10px 5px; /* Ajusta el espaciado alrededor de los botones */
+  margin: 10px 5px;
 }
+
+/* Estilos para la barra de navegación personalizada */
 .custom-navbar {
   min-height: 100px; /* Ajusta este valor según necesites */
   padding: 0 10px; /* Ajusta el padding si es necesario */
-}
-.custom-carousel-img {
-  opacity: 0.5; /* Ajusta la opacidad según necesites */
+  margin-bottom: -20px; /* Aplica un margen negativo para superponer el logo sobre el degradado de fondo */
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  filter: drop-shadow(0 0 10px rgba(16, 30, 16, 0.5)); /* Agrega el resplandor */
 }
 
-/* Asegúrate de que el contenido sobre el carrusel tenga un contraste adecuado */
+.container-fluid.my-5 {
+  margin-bottom: -20px;
+}
+
+/* Estilos para el contenido superpuesto sobre el carrusel */
 .content-over-carousel {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2; /* Asegura que el contenido esté sobre el carrusel */
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#00336698, #205072, #007C8C);
+}
+
+/* Colores personalizados para los botones */
+.btn-primary-custom {
+  background-color: #39FF14; /* Azul */
+  border-color: #007bff;
+}
+
+.btn-primary-custom:hover {
+  background-color: #0056b3; /* Azul oscuro al pasar el mouse */
+  border-color: #0056b3;
+}
+
+/* Estilos para las imágenes y descripciones de los servicios */
+.service-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(750px, 1fr)); /* Distribuye las imágenes en una cuadrícula fluida */
+  gap: 2px; /* Espacio entre las imágenes */
+}
+
+.service-image-container {
+  position: relative;
+  width: 100%; /* Modificado para adaptarse al ancho del contenedor */
+  display: inline-block;
+}
+
+.service-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  transition: transform 0.3s ease;
+  transform: translateY(100%);
+}
+
+.service-description.active {
+  transform: translateY(0);
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen para que cubra el contenedor manteniendo la relación de aspecto */
+}
+
+/* Estilos para el efecto de mostrar la descripción al hacer hover */
+.service-frame:hover .service-description {
+  transform: translateY(0);
 }
