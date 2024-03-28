@@ -1,192 +1,191 @@
-/* Importa la fuente de Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+/* App.css */
 
+/* Importa las fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;700&family=Raleway:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+/* Colores personalizados */
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #000000;
+  --text-color: #000000;
+  --background-color: #ffffff;
+  --selected-color: #000000;
+  --light-color: #f5f5f5;
+  --dark-color: #000000;
+}
 
 /* Estilos generales */
-body, html {
-  font-family: 'Lato', sans-serif;
-
-  margin: 0; /* Elimina los márgenes */
-  width: 100%; /* Ancho completo */
-  height: 100%; /* Altura completa */
-}
-
-/* Estilos para el contenedor principal */
-#root {
+body,
+html {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
   width: 100%;
   height: 100%;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
-.container {
-  max-width: 1500px;
-  margin: 0 auto;
-}
-
-.row {
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-.row > [class^="col"] {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-/* Estilos para el marco de los servicios */
-.service-frame {
-  border: none; /* Elimina el borde blanco */
-  padding: 35px;
-  margin-bottom: 20px;
-  cursor: pointer; /* Cambia el cursor al hacer hover sobre los servicios */
-  position: relative; /* Añadido para el posicionamiento de la descripción */
-  overflow: hidden; /* Añadido para que la descripción no sobresalga del marco */
-}
-
-/* Estilos para el botón de título del servicio */
-.service-title {
-  margin-bottom: 10px;
-  position: absolute; /* Posiciona el título */
-  top: 40px; /* Ajusta la distancia desde la parte superior de la imagen */
-  left: 50%; /* Centra horizontalmente */
-  transform: translateX(-50%); /* Centra horizontalmente */
-  z-index: 1; /* Asegura que el título esté sobre la imagen */
-}
-
-/* Estilos para la barra de navegación personalizada */
-.custom-navbar {
-  min-height: 100px; /* Ajusta este valor según necesites */
-  padding: 0 10px; /* Ajusta el padding si es necesario */
-  margin-bottom: -20px; /* Aplica un margen negativo para superponer el logo sobre el degradado de fondo */
+/* Estilos para el encabezado */
+.app-header {
   display: flex;
-  align-items: center; /* Centra verticalmente */
-  justify-content: center; /* Centra horizontalmente */
-  filter: drop-shadow(0 0 10px rgba(16, 30, 16, 0.5)); /* Agrega el resplandor */
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f8f9fa;
 }
 
-.container-fluid.my-5 {
-  margin-bottom: -20px;
+.logo {
+  width: 180px;
+  height: auto;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-
-/* Colores personalizados para los botones */
-.btn-primary-custom {
-  background-color: #39FF14; /* Azul */
-  border-color: #007bff;
+.header-text {
+  font-family: 'Bebas Neue', 'cursive', sans-serif;
+  font-size: 52px;
+  color: #000;
+  margin: 0;
+  text-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
 }
 
-.btn-primary-custom:hover {
-  background-color: #0056b3; /* Azul oscuro al pasar el mouse */
-  border-color: #0056b3;
+/* Estilos para el banner superior */
+.navbar {
+  padding: 8px 0;
 }
 
-/* Estilos para las imágenes y descripciones de los servicios */
-.service-images {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(750px, 1fr)); /* Distribuye las imágenes en una cuadrícula fluida */
-  gap: 2px; /* Espacio entre las imágenes */
+/* Estilos para el contenido principal */
+.main-content {
+  min-height: calc(100vh - 150px); /* Ajustado para evitar superposición con el banner */
+  padding-top: 40px;
 }
 
-.service-image-container {
+/* Estilos para el carrusel */
+.carousel-wrapper {
+  width: 80%;
   position: relative;
-  width: 100%; /* Modificado para adaptarse al ancho del contenedor */
-  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  overflow: hidden;
 }
 
-.service-description {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  transition: transform 0.2s ease;
-  transform: translateY(100%);
+.carousel-wrapper .slick-slide {
+  transition: transform 0.3s ease-in-out;
 }
 
-.service-description.active {
-  transform: translateY(0);
+.carousel-wrapper .slick-slide:hover {
+  transform: scale(1.05);
 }
 
 /* Estilos para las imágenes de los servicios */
 .service-image {
-  width: 90%; /* Reducir el tamaño en un 10% */
+  width: 100%;
   height: auto;
-  object-fit: cover; /* Ajusta la imagen para que cubra el contenedor manteniendo la relación de aspecto */
-  display: block; /* Asegura que la imagen se muestre como un bloque */
-  margin: 0 auto; /* Centra horizontalmente la imagen */
-  box-shadow: none; /* Elimina la sombra alrededor de la imagen */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilos para el efecto de mostrar la descripción al hacer hover */
-.service-frame:hover .service-description {
-  transform: translateY(0);
+/* Estilos para el listado de servicios */
+.service-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-title {
+  font-weight: bold;
+}
+
+/* Estilos para los detalles del servicio */
+.service-details {
+  text-align: center;
+}
+
+.service-details .card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.service-details .card-body {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.service-details .card-title {
+  color: var(--secondary-color);
+  font-weight: bold;
 }
 
 /* Estilos para las flechas del carrusel */
 .slick-arrow {
-  font-size: 24px; /* Aumenta el tamaño de las flechas */
-  color: white; /* Color de las flechas */
-  background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-  border-radius: 50%; /* Borde redondeado */
-  width: 50px; /* Aumenta el tamaño */
-  height: 50px; /* Aumenta el tamaño */
-  display: flex; /* Alinea verticalmente */
-  align-items: center; /* Alinea verticalmente */
-  justify-content: center; /* Alinea horizontalmente */
-  position: absolute; /* Posicionamiento absoluto */
-  top: 50%; /* Centra verticalmente */
-  transform: translateY(-50%); /* Centra verticalmente */
-  z-index: 1; /* Asegura que estén sobre las imágenes */
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.slick-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .slick-next {
-  right: 20px; /* Alinea la flecha de siguiente a la derecha */
+  right: 10px;
 }
 
 .slick-prev {
-  left: 20px; /* Alinea la flecha de anterior a la izquierda */
+  left: 10px;
 }
 
-/* Agrega una animación de balanceo a las flechas del carrusel */
-@keyframes arrowBounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+/* Animación de transición para las imágenes del carrusel */
+.slick-slide {
+  transition: opacity 0.5s ease-in-out;
 }
 
-/* Importa la fuente de Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
-
-
-/* Estilos generales para contenedores */
-.container, .container-fluid {
-  max-width: 100%;
-  height: 100%; /* Ajusta el contenedor para que ocupe toda la altura */
-  padding: 0; /* Elimina el padding para que el carrusel llene todo el espacio */
+.slick-slide.slick-active {
+  opacity: 1;
 }
 
-/* Ajustes para la barra de navegación y el contenido sobre el carrusel */
-.custom-navbar, .content-over-carousel {
-  position: relative; /* Cambiado de 'absolute' para asegurar que el contenido no se solape */
-  z-index: 2; /* Mantiene el contenido sobre el carrusel */
-  width: 100%;
+.slick-slide:not(.slick-active) {
+  opacity: 0;
 }
 
-.content-over-carousel {
+/* Estilos para el botón "Schedule Now" */
+.schedule-btn {
+  display: block;
+  margin: 0 auto;
+  background-color: #4caf50;
+  border-color: #4caf50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.schedule-btn:hover {
+  background-color: #45a049;
+  border-color: #45a049;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el formulario del modal */
+.modal-body form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: none; /* Elimina el fondo para ver el carrusel debajo */
 }
 
-/* Ajustes para las flechas del carrusel */
-.slick-arrow {
-  z-index: 3;
+.modal-body .form-label {
+  font-weight: bold;
+}
+
+.modal-body .form-control {
+  margin-bottom: 1rem;
 }
