@@ -115,15 +115,15 @@ function App() {
         <Modal.Body>
           <form>
             <div className="mb-3">
-              <label htmlFor="name" className="form-label">Name</label>
+              <label htmlFor="name" className="form-label form-title">Name</label>
               <input type="text" className="form-control" id="name" />
             </div>
             <div className="mb-3">
-              <label htmlFor="phone" className="form-label">Phone</label>
+              <label htmlFor="phone" className="form-label form-title">Phone</label>
               <input type="tel" className="form-control" id="phone" />
             </div>
             <div className="mb-3">
-              <label htmlFor="service" className="form-label">Service</label>
+              <label htmlFor="service" className="form-label form-title">Service</label>
               <select
                 className="form-control"
                 id="service"
@@ -138,7 +138,7 @@ function App() {
               </select>
             </div>
             <div className="mb-3">
-              <label htmlFor="date" className="form-label">Date</label>
+              <label htmlFor="date" className="form-label form-title">Date</label>
               <input
                 type="date"
                 className="form-control"
@@ -149,7 +149,7 @@ function App() {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="time" className="form-label">Time</label>
+              <label htmlFor="time" className="form-label form-title">Time</label>
               <input
                 type="time"
                 className="form-control"
