@@ -30,7 +30,7 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 0px 20px;
   background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -58,16 +58,14 @@ body, html {
 
 /* Estilos para el contenido principal */
 .main-content {
-  min-height: calc(100vh - 150px); /* Ajustado para evitar superposición con el banner */
-  padding-top: 40px;
+  min-height: calc(100vh - 150px);
+  padding-top: 20px;
 }
 
 /* Estilos para el carrusel */
 .carousel-wrapper {
   width: 80%;
   position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
   overflow: hidden;
   margin-left: auto;
 }
@@ -96,6 +94,7 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
 .service-title {
@@ -105,14 +104,15 @@ body, html {
 
 .service-title:hover,
 .service-title.active {
-  background-color: #39ff14;
-  color: #000000;
+  background-color: #000;
+  color: #fff;
 }
 
 /* Estilos para los detalles del servicio */
 .service-details {
   text-align: left;
   margin-right: auto;
+  margin-top: 20px;
 }
 
 .service-details .card {
@@ -127,6 +127,16 @@ body, html {
 
 .service-details .card-title {
   color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 38px; /* Ajusta el tamaño según tus preferencias */
+}
+
+.service-details .card-text {
+  font-size: 20px; /* Ajusta el tamaño según tus preferencias */
+}
+
+.service-details .card-text:last-child {
+  font-size: 26px; /* Ajusta el tamaño según tus preferencias */
   font-weight: bold;
 }
 
