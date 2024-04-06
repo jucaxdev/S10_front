@@ -1,52 +1,54 @@
-/* App.css */
-
-/* Importa las fuentes de Google Fonts */
+/* Importar las fuentes de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;700&family=Raleway:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-/* Colores personalizados */
+/* Definir colores personalizados */
 :root {
   --primary-color: #ffffff;
-  --secondary-color: #000000;
-  --text-color: #000000;
-  --background-color: #ffffff;
-  --selected-color: #000000;
-  --light-color: #f5f5f5;
-  --dark-color: #000000;
+  --secondary-color: #ffffff;
+  --text-color: #ffffff;
+  --background-color: #1f1f1f;
+  --selected-color: #ffffff;
+  --light-color: #2b2b2b;
+  --dark-color: #ffffff;
+  --schedule-btn-color: #39ff14;
 }
 
 /* Estilos generales */
-body,
-html {
+body, html {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   width: 100%;
   height: 100%;
   color: var(--text-color);
-  background-color: var(--background-color);
+  background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
 }
 
 /* Estilos para el encabezado */
 .app-header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #f8f9fa;
+  justify-content: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
   width: 180px;
   height: auto;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .header-text {
   font-family: 'Bebas Neue', 'cursive', sans-serif;
-  font-size: 52px;
-  color: #000;
+  font-size: 64px;
+  color: #fff;
   margin: 0;
-  text-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 /* Estilos para el banner superior */
@@ -67,6 +69,7 @@ html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 50px;
   overflow: hidden;
+  margin-left: auto;
 }
 
 .carousel-wrapper .slick-slide {
@@ -97,15 +100,24 @@ html {
 
 .service-title {
   font-weight: bold;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.service-title:hover,
+.service-title.active {
+  background-color: #39ff14;
+  color: #000000;
 }
 
 /* Estilos para los detalles del servicio */
 .service-details {
-  text-align: center;
+  text-align: left;
+  margin-right: auto;
 }
 
 .service-details .card {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: var(--light-color);
 }
 
 .service-details .card-body {
@@ -121,7 +133,7 @@ html {
 /* Estilos para las flechas del carrusel */
 .slick-arrow {
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -136,7 +148,7 @@ html {
 }
 
 .slick-arrow:hover {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .slick-next {
@@ -164,15 +176,16 @@ html {
 .schedule-btn {
   display: block;
   margin: 0 auto;
-  background-color: #4caf50;
-  border-color: #4caf50;
+  background-color: var(--schedule-btn-color);
+  border-color: var(--schedule-btn-color);
+  color: #000;
+  font-weight: bold;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .schedule-btn:hover {
-  background-color: #45a049;
-  border-color: #45a049;
+  transform: scale(1.05);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -188,4 +201,31 @@ html {
 
 .modal-body .form-control {
   margin-bottom: 1rem;
+}
+
+/* Estilos para el modal */
+.modal-content {
+  background-color: #fff;
+  color: #000;
+}
+
+.modal-header {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+  color: #000;
+}
+
+.modal-body {
+  color: #000;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+
+/* Estilos para los títulos del formulario */
+.form-title {
+  color: #000;
 }
