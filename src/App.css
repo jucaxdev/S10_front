@@ -99,7 +99,8 @@ body, html {
 
 .service-title {
   font-weight: bold;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.80s ease-in-out;
+  margin-bottom: 30px; /* Ajusta el valor según tus preferencias */
 }
 
 .service-title:hover,
@@ -136,7 +137,7 @@ body, html {
 }
 
 .service-details .card-text:last-child {
-  font-size: 26px; /* Ajusta el tamaño según tus preferencias */
+  font-size: 20px; /* Ajusta el tamaño según tus preferencias */
   font-weight: bold;
 }
 
