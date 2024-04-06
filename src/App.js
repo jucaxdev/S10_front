@@ -1,5 +1,4 @@
-// App.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -27,6 +26,7 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
+  const [availableTimes, setAvailableTimes] = useState([]);
   const carouselImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13];
 
   const handleServiceClick = (service) => {
@@ -41,7 +41,7 @@ function App() {
     setShowModal(false);
     setSelectedDate('');
     setSelectedTime('');
-    window.location.reload(); // Recargar la página después de cerrar el modal
+    window.location.reload();
   };
 
   const handleDateChange = (event) => {
@@ -56,6 +56,25 @@ function App() {
     const selectedService = services.find((service) => service.title === event.target.value);
     setSelectedService(selectedService);
   };
+
+  useEffect(() => {
+    const now = new Date();
+    const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
+    const availableTimes = [];
+
+    for (let hour = currentHour; hour < 24; hour++) {
+      for (let minute = 0; minute < 60; minute += 30) {
+        if (hour === currentHour && minute < currentMinute) {
+          continue;
+        }
+        const time = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+        availableTimes.push(time);
+      }
+    }
+
+    setAvailableTimes(availableTimes);
+  }, [showModal]);
 
   const settings = {
     dots: false,
@@ -81,22 +100,22 @@ function App() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-4">
-            <div className="carousel-wrapper">
-              <Slider {...settings}>
-                {carouselImages.map((image, index) => (
-                  <div key={index}>
-                    <img src={image} alt={`Carousel  ${index + 1}`} className="service-image" />
-                  </div>
-                ))}
-              </Slider>
-            </div>
+              <div className="carousel-wrapper">
+                <Slider {...settings}>
+                  {carouselImages.map((image, index) => (
+                    <div key={index}>
+                      <img src={image} alt={`Carousel ${index + 1}`} className="service-image" />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
             </div>
             <div className="col-md-4 d-flex flex-column justify-content-center">
               <div className="service-list">
                 {services.map((service, index) => (
                   <button
                     key={index}
-                    className={`btn btn-${selectedService === service ? 'dark' : 'light'} service-title mb-2`}
+                    className={`btn service-title mb-2 ${selectedService === service ? 'active' : ''}`}
                     onClick={() => handleServiceClick(service)}
                   >
                     {service.title}
@@ -171,7 +190,13 @@ function App() {
                 step="1800"
                 value={selectedTime}
                 onChange={handleTimeChange}
+                list="availableTimes"
               />
+              <datalist id="availableTimes">
+                {availableTimes.map((time, index) => (
+                  <option key={index} value={time} />
+                ))}
+              </datalist>
             </div>
           </form>
         </Modal.Body>
@@ -186,7 +211,6 @@ function App() {
   );
 }
 
-// Componente para la flecha de siguiente
 const NextArrow = (props) => {
   const { onClick } = props;
   return (
@@ -196,7 +220,6 @@ const NextArrow = (props) => {
   );
 };
 
-// Componente para la flecha de anterior
 const PrevArrow = (props) => {
   const { onClick } = props;
   return (
