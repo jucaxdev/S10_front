@@ -8,12 +8,26 @@ import './App.css';
 import services from './servicesData';
 import { Modal } from 'react-bootstrap';
 import logo from './assets/svg/logo.png';
+import img1 from './assets/svg/img 1.jpeg';
+import img2 from './assets/svg/img 2.jpeg';
+import img3 from './assets/svg/img 3.jpeg';
+import img4 from './assets/svg/img 4.jpeg';
+import img5 from './assets/svg/img 5.jpeg';
+import img6 from './assets/svg/img 6.jpeg';
+import img7 from './assets/svg/img 7.jpeg';
+import img8 from './assets/svg/img 8.jpeg';
+import img9 from './assets/svg/img 9.jpeg';
+import img10 from './assets/svg/img 10.jpeg';
+import img11 from './assets/svg/img 11.jpeg';
+import img12 from './assets/svg/img 12.jpeg';
+import img13 from './assets/svg/img 13.jpeg';
 
 function App() {
   const [selectedService, setSelectedService] = useState(services[0]);
   const [showModal, setShowModal] = useState(false);
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
+  const carouselImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13];
 
   const handleServiceClick = (service) => {
     setSelectedService(service);
@@ -67,15 +81,15 @@ function App() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-4">
-              <div className="carousel-wrapper">
-                <Slider {...settings}>
-                  {services.map((service, index) => (
-                    <div key={index}>
-                      <img src={service.image} alt={service.title} className="service-image" />
-                    </div>
-                  ))}
-                </Slider>
-              </div>
+            <div className="carousel-wrapper">
+              <Slider {...settings}>
+                {carouselImages.map((image, index) => (
+                  <div key={index}>
+                    <img src={image} alt={`Carousel  ${index + 1}`} className="service-image" />
+                  </div>
+                ))}
+              </Slider>
+            </div>
             </div>
             <div className="col-md-4 d-flex flex-column justify-content-center">
               <div className="service-list">
