@@ -12,6 +12,7 @@
   --light-color: #2b2b2b;
   --dark-color: #ffffff;
   --schedule-btn-color: #39ff14;
+  --accent-color: #39ff14 ; /* Color de acento para detalles */
 }
 
 /* Estilos generales */
@@ -30,7 +31,7 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0px 20px;
+  padding: 20px;
   background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -38,7 +39,7 @@ body, html {
 .logo {
   width: 180px;
   height: auto;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 10px rgba(33, 33, 33, 0.3);
 }
 
 .header-text {
@@ -46,7 +47,7 @@ body, html {
   font-size: 64px;
   color: #fff;
   margin: 0;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 10px rgb(95, 95, 95);
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -68,6 +69,8 @@ body, html {
   position: relative;
   overflow: hidden;
   margin-left: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
 }
 
 .carousel-wrapper .slick-slide {
@@ -86,7 +89,6 @@ body, html {
   display: block;
   margin: 0 auto;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos para el listado de servicios */
@@ -99,13 +101,18 @@ body, html {
 
 .service-title {
   font-weight: bold;
-  transition: background-color 0.3s ease-in-out, color 0.80s ease-in-out;
-  margin-bottom: 30px; /* Ajusta el valor según tus preferencias */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .service-title:hover,
 .service-title.active {
-  background-color: #000;
+  background-color: var(--accent-color);
   color: #fff;
 }
 
@@ -114,31 +121,38 @@ body, html {
   text-align: left;
   margin-right: auto;
   margin-top: 20px;
+  text-shadow: 0 0 10px rgb(54, 54, 54);
 }
 
 .service-details .card {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   background-color: var(--light-color);
+  border-radius: 5px;
+  text-shadow: 0 0 10px rgb(95, 95, 95);
 }
 
 .service-details .card-body {
   background-color: var(--light-color);
   color: var(--dark-color);
+  text-shadow: 0 0 10px rgb(95, 95, 95);
 }
 
 .service-details .card-title {
   color: var(--secondary-color);
   font-weight: bold;
-  font-size: 38px; /* Ajusta el tamaño según tus preferencias */
+  font-size: 38px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .service-details .card-text {
-  font-size: 20px; /* Ajusta el tamaño según tus preferencias */
+  font-size: 20px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .service-details .card-text:last-child {
-  font-size: 20px; /* Ajusta el tamaño según tus preferencias */
+  font-size: 20px;
   font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos para las flechas del carrusel */
@@ -156,6 +170,7 @@ body, html {
   transform: translateY(-50%);
   z-index: 1;
   transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .slick-arrow:hover {
@@ -189,10 +204,11 @@ body, html {
   margin: 0 auto;
   background-color: var(--schedule-btn-color);
   border-color: var(--schedule-btn-color);
-  color: #000;
+  color: #000000; /* Cambiar el color del texto a blanco */
   font-weight: bold;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 5px;
 }
 
 .schedule-btn:hover {
@@ -212,20 +228,27 @@ body, html {
 
 .modal-body .form-control {
   margin-bottom: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos para el modal */
 .modal-content {
   background-color: #fff;
   color: #000;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .modal-header {
   border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .modal-title {
   color: #000;
+  font-weight: bold;
 }
 
 .modal-body {
@@ -234,9 +257,60 @@ body, html {
 
 .modal-footer {
   border-top: 1px solid #dee2e6;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 /* Estilos para los títulos del formulario */
 .form-title {
   color: #000;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+  .app-header {
+    padding: 10px;
+  }
+
+  .header-text {
+    font-size: 36px;
+  }
+
+  .main-content {
+    padding-top: 10px;
+  }
+
+  .carousel-wrapper {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .col-md-4 {
+    margin-bottom: 20px;
+  }
+
+  /* Estilos para el listado de servicios */
+.service-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.service-title {
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.service-title:hover,
+.service-title.active {
+  background-color: var(--accent-color);
+  color: #fff; /* Cambiar el color del texto a blanco cuando esté activo */
+}
 }
